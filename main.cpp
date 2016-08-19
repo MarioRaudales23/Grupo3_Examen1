@@ -4,6 +4,9 @@
 #include <vector>
 using namespace std;
 
+void tostring(pokemon*);
+int opciones();
+
 int main(int argc, char const *argv[])
 {
 	vector<pokemon*> vector_poke;
@@ -238,11 +241,587 @@ int main(int argc, char const *argv[])
 
 			}
 			case 5:{
-				
-			}
+				int submenu;
+				cout<<"1-Nombre\n2-Nivel\n3-Naturaleza\n4-Tipo\n5-Hp\n6-Ataque\n7-Defensa\n8-Ataque Especial\n9-Defensa Especial\n10-Rapidez\n11-Legendario\n...";
+				cin>>submenu;
+				switch(submenu){
+					case 1:{
+						string nombre;
+						cout<<"Ingrese el nombre: ";
+						cin>>nombre;
+						for (int i = 0; i < vector_poke.size(); ++i)
+						{
+							if (vector_poke[i]->getnombre() == nombre)
+							{
+								tostring(vector_poke[i]);
+							}
+						}
+					}
+					case 2:{
 
+					}
+					case 3:{
+						int opNaturaleza=0;
+						string naturaleza;
+						do
+						{
+							cout<<"1.-Hardy\t2.-Lonely\t3.-Brave\t4.-Adamant"<<endl;
+							cout<<"5.-Naughty\t6.-Bold\t7.-Docile\t8.-Relaxed"<<endl;
+							cout<<"9.-Impish\t10.-Lax\t11.-Timid\t12.-Hasty"<<endl;
+							cout<<"13.-Serious\t14.-Jolly\t15.-Naive\t16.-Modest"<<endl;
+							cout<<"17.-Mild\t18.-Quiet\t19.-Bashful\t20.-Rash"<<endl;
+							cout<<"21.-Calm\t22.-Gentle\t23.-Sassy\t24.-Careful"<<endl;
+							cout<<"25.-Quirky"<<endl<<"...";
+							cin>>opNaturaleza;
+							if (opNaturaleza<0||opNaturaleza>25)
+							{
+								cout<<"Dato ingresado erroneo..."<<endl<<endl;
+							}
+						} while (opNaturaleza<0||opNaturaleza>25);
+						if (opNaturaleza==1)
+						{
+						naturaleza="Hardy";
+						}else if (opNaturaleza==2)
+						{
+						naturaleza="Lonely";
+						}else if (opNaturaleza==3)
+						{
+						naturaleza="Brave";
+						}else if (opNaturaleza==4)
+						{
+						naturaleza="Adamant";
+						}else if (opNaturaleza==5)
+						{
+						naturaleza="Naughty";
+						}else if (opNaturaleza==6)
+						{
+						naturaleza="Bold";
+						}else if (opNaturaleza==7)
+						{
+						naturaleza="Docile";
+						}else if (opNaturaleza==8)
+						{
+						naturaleza="Relaxed";
+						}else if (opNaturaleza==9)
+						{
+						naturaleza="Impish";
+						}else if (opNaturaleza==10)
+						{
+						naturaleza="Lax";
+						}else if (opNaturaleza==11)
+						{
+						naturaleza="Timid";
+						}else if (opNaturaleza==12)
+						{
+						naturaleza="Hasty";
+						}else if (opNaturaleza==13)
+						{
+						naturaleza="Serious";
+						}else if (opNaturaleza==14)
+						{
+						naturaleza="Jolly";
+						}else if (opNaturaleza==15)
+						{
+						naturaleza="Naive";
+						}else if (opNaturaleza==16)
+						{
+						naturaleza="Modest";
+						}else if (opNaturaleza==17)
+						{
+						naturaleza="Mild";
+						}else if (opNaturaleza==18)
+						{
+						naturaleza="Quiet";
+						}else if (opNaturaleza==19)
+						{
+						naturaleza="Bashful";
+						}else if (opNaturaleza==20)
+						{
+						naturaleza="Rash";
+						}else if (opNaturaleza==21)
+						{
+						naturaleza="Calm";
+						}else if (opNaturaleza==22)
+						{
+						naturaleza="Gentle";
+						}else if (opNaturaleza==23)
+						{
+						naturaleza="Sassy";
+						}else if (opNaturaleza==24)
+						{
+						naturaleza="Careful";
+						}else if (opNaturaleza==25)
+						{
+						naturaleza="Quirky";
+						}
+						for (int i = 0; i < vector_poke.size(); ++i)
+						{
+							if (vector_poke[i]->getnaturaleza() == naturaleza)
+							{
+								tostring(vector_poke[i]);
+							}
+						}
+					}
+					case 4:{
+				
+						break;
+					}
+					case 5:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gethp() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+						}
+						break;
+					}
+					case 6:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(submenu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataque() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+					} 
+					case 7:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensa() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+					}
+					case 8:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getataquesp() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+					}
+					case 9:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getdefensaesp() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+					}
+					case 10:{
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getrapidez() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;
+					}
+					case 11:{
+
+					}
+				}
+			}
 		}
+		return 0;
 	}
-	/* code */
-	return 0;
+
+void tostring(pokemon* poke){
+	string nombre,naturaleza,tipo1,tipo2;
+	int nivel,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
+	bool legendario;
+	char leg;
+	nombre = poke->getnombre();
+	naturaleza = poke->getnaturaleza();
+	tipo1 = poke->gettipo1();
+	tipo2 = poke->gettipo2();
+	nivel = poke->getnivel();
+	hp= poke->gethp();
+	ataque= poke->getataque();
+	defensa= poke->getdefensa();
+	ataqueEspecial= poke->getataquesp();
+	defensaEspecial= poke->getdefensaesp();
+	rapidez= poke->getrapidez();
+	legendario= poke->getlegendario();
+	if (legendario)
+	{
+		leg = 's';
+	}else{
+		leg = 'n';
+	}
+	cout<<"Nombre: "<<nombre<<"\nNivel: "<<nivel<<"\nNaturaleza: "<<naturaleza<<"\nLegendario: "<<leg<<endl;
+	cout<<"HP: "<<hp<<"\tTipo1: "<<tipo1<<"\tTipo2: "<<tipo2<<endl;
+	cout<<"Ataque: "<<ataque<<"\tDefensa: "<<defensa<<"\tAtaque Especial: "<<ataqueEspecial<<endl;
+	cout<<"Defensa Especial: "<<defensaEspecial<<"\tRapidez: "<<rapidez<<endl;
+}
+int opciones(){
+	int submenu;
+	cout<<"1-Mayor a\n2-Menor a\n3-Igual a\n4-Menor o igual\n5-Mayor o igual\n6-Diferente de\n...";
+	cin>>submenu;
+	return submenu;
 }
