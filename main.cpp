@@ -103,6 +103,53 @@ int main(int argc, char const *argv[])
 				vector_poke.push_back(poke);
 				break;
 			}
+			case 2:{
+				int posicion;
+				pokemon* temp;
+				cout<<"Ingrese la posicion del pokemon: ";
+				cin>>posicion;
+				if (posicion <= vector_poke.size)
+				{
+					temp = vector_poke[posicion];
+					string nombrenue;
+					int nivel;
+					int submenu = 0;
+					cout<<"Opcion 1: Nombre\nOpcion 2: Nivel";
+					cin>>submenu;
+					switch(submenu){
+						case 1:{
+							cout<<"Ingrese el nombre nuevo";
+							cin>>nombrenue;
+							temp->setnombre(nombrenue);
+							cout<<"Cambio realizado";
+						}
+						case 2:{
+							cout<<"Ingrese el nuevo nivel: ";
+							cin>>nivel;
+							if (nivel <= 100 && nivel>=1)
+							{
+								temp->setnivel(nivel);
+								cout<<"Cambio realizado";
+							}
+						}
+					}
+				}
+				break;
+			}
+			case 3:{
+				int posicion;
+				cout<<"Ingrese la posicion del pokemon: ";
+				cin>>posicion;
+				if (posicion <= vector_poke.size)
+				{				
+					myvector.erase(myvector.begin()+posicion);
+					cout<<"Borrado con exito";
+				}
+				break;
+			}
+			case 5:{
+			}
+
 		}
 	}
 	/* code */
