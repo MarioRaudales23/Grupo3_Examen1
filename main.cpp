@@ -25,6 +25,8 @@ int main(int argc, char const *argv[])
 				cout<<"----Datos Generales----"<<endl;
 				cout<<"Nombre: ";
 				cin>>nombre;
+				cout<<"Nivel: ";
+				cin>>nivel;
 				cout<<"\tNaturaleza: ";
 				int opNaturaleza=0;
 				do
@@ -118,15 +120,9 @@ int main(int argc, char const *argv[])
 				{
 					naturaleza="Quirky";
 				}
-				do
-				{
-					cout<<"Es legendario (s/n): ";
-					cin>>temLegendario;
-					if (temLegendario!='s'||temLegendario!='n')
-					{
-						cout<<endl<<"Dato ingresado erroneo..."<<endl;
-					}
-				} while (temLegendario!='s'||temLegendario!='n');
+				cout<<"Es legendario (s/n): ";
+				cin>>temLegendario;
+				
 				if (temLegendario=='s')
 				{
 					legendario=true;
@@ -134,15 +130,16 @@ int main(int argc, char const *argv[])
 					legendario=false;
 				}
 				cout<<endl;
-				cout<<"Cuantos tipos posee el pokemon (1 o 2): ";
+				
 				do
 				{
+					cout<<"Cuantos tipos posee el pokemon (1 o 2): ";
 					cin>>numTipo;
-					if (numTipo!=1||numTipo!=2)
+					if (numTipo<1||numTipo>2)
 					{
 						cout<<endl<<"-------------------------"<<endl<<"Error la cantidad de tipos no puede ser mayor que 2"<<endl<<"-------------------------"<<endl;
 					}
-				} while (numTipo!=1||numTipo!=2);
+				} while (numTipo<1||numTipo>2);
 				if (numTipo==1)
 				{
 					cout<<"Tipo : ";
@@ -173,7 +170,7 @@ int main(int argc, char const *argv[])
 					cout<<"Defensa Especial: ";
 					cin>>defensaEspecial;
 					sumaStats+=defensaEspecial;
-				} while (sumaStats<=780);
+				} while (sumaStats>780);
 				poke=new pokemon(nombre,nivel,naturaleza,tipo1,tipo2,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez,legendario);
 				vector_poke.push_back(poke);
 				break;
