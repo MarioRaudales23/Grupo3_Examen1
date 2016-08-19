@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string.h>
 #include "pokemon.h"
+#include <vector>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	std::vector<pokemon> vector_poke;
+	vector<pokemon*> vector_poke;
 	pokemon* poke=new pokemon();
 	int op=0;
 	while(op!=6){
@@ -14,7 +15,7 @@ int main(int argc, char const *argv[])
 		cin>>op;
 		cout<<endl;
 		switch(op){
-			case 1{
+			case 1:{
 				string nombre,naturaleza,tipo1,tipo2;
 				int nivel,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
 				bool legendario;
