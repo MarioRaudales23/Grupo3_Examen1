@@ -212,14 +212,15 @@ int main(int argc, char const *argv[])
 				int posicion;
 				cout<<"Ingrese la posicion del pokemon: ";
 				cin>>posicion;
-				if (posicion <= vector_poke.size)
+				if (posicion <= vector_poke.size())
 				{				
-					myvector.erase(myvector.begin()+posicion);
+					vector_poke.erase(vector_poke.begin()+posicion);
 					cout<<"Borrado con exito";
 				}
 				break;
 			}
 			case 5:{
+
 			}
 
 		}
