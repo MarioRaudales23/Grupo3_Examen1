@@ -252,7 +252,7 @@ int main(int argc, char const *argv[])
 					}
 					case 2:{
 						vector<pokemon*> vectorTemporal;
-						
+						pokemon* poke_debil; 
 						for (int i = 0; i < vector_poke.size(); i++)
 						{
 							pokemon* tem=vector_poke.at(i);
@@ -261,12 +261,17 @@ int main(int argc, char const *argv[])
 								if (vector_poke.at(i)->getnivel()<vector_poke.at(j)->getnivel()&&
 									vector_poke.at(i)->getnombre()!=vector_poke.at(j)->getnombre())
 								{
+									poke_debil=tem;
 									tem=vector_poke.at(j);
 								}
-								vectorTemporal.push_back(vector_poke.at(j));
-								cout<<vector_poke.at(j)->getnombre()<<"\t"<<vector_poke.at(j)->getnivel();
+								
 							}
+							vectorTemporal.push_back(tem);
+							cout<<tem->getnombre()<<"\t"<<tem->getnivel()<<endl;
+							
 						}
+						vectorTemporal.push_back(poke_debil);
+						cout<<poke_debil->getnombre()<<"\t"<<poke_debil->getnivel()<<endl;
 						vector_poke=vectorTemporal;
 						break;
 					}
