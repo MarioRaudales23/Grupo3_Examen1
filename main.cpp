@@ -279,6 +279,7 @@ int main(int argc, char const *argv[])
 						break;
 					}
 				}
+				break;
 
 			}
 			case 5:{
@@ -892,13 +893,20 @@ int main(int argc, char const *argv[])
 						break;
 					}
 					case 11:{
-
+						for (int i = 0; i < vector_poke.size(); ++i)
+						{
+							if (vector_poke[i]->getlegendario())
+							{
+								tostring(vector_poke[i]);
+							}
+						}
+						break;
 					}
 				}
 			}
 		}
-		return 0;
 	}
+	return 0;
 }
 void tostring(pokemon* poke){
 	string nombre,naturaleza,tipo1,tipo2;
