@@ -42,10 +42,85 @@ int main(int argc, char const *argv[])
 						cout<<"Dato ingresado erroneo..."<<endl<<endl;
 					}
 				} while (opNaturaleza<0||opNaturaleza>25);
-				
-				cout<<"Es legendario (s/n): ";
+				if (opNaturaleza==1)
+				{
+					naturaleza="Hardy";
+				}else if (opNaturaleza==2)
+				{
+					naturaleza="Lonely";
+				}else if (opNaturaleza==3)
+				{
+					naturaleza="Brave";
+				}else if (opNaturaleza==4)
+				{
+					naturaleza="Adamant";
+				}else if (opNaturaleza==5)
+				{
+					naturaleza="Naughty";
+				}else if (opNaturaleza==6)
+				{
+					naturaleza="Bold";
+				}else if (opNaturaleza==7)
+				{
+					naturaleza="Docile";
+				}else if (opNaturaleza==8)
+				{
+					naturaleza="Relaxed";
+				}else if (opNaturaleza==9)
+				{
+					naturaleza="Impish";
+				}else if (opNaturaleza==10)
+				{
+					naturaleza="Lax";
+				}else if (opNaturaleza==11)
+				{
+					naturaleza="Timid";
+				}else if (opNaturaleza==12)
+				{
+					naturaleza="Hasty";
+				}else if (opNaturaleza==13)
+				{
+					naturaleza="Serious";
+				}else if (opNaturaleza==14)
+				{
+					naturaleza="Jolly";
+				}else if (opNaturaleza==15)
+				{
+					naturaleza="Naive";
+				}else if (opNaturaleza==16)
+				{
+					naturaleza="Modest";
+				}else if (opNaturaleza==17)
+				{
+					naturaleza="Mild";
+				}else if (opNaturaleza==18)
+				{
+					naturaleza="Quiet";
+				}else if (opNaturaleza==19)
+				{
+					naturaleza="Bashful";
+				}else if (opNaturaleza==20)
+				{
+					naturaleza="Rash";
+				}else if (opNaturaleza==21)
+				{
+					naturaleza="Calm";
+				}else if (opNaturaleza==22)
+				{
+					naturaleza="Gentle";
+				}else if (opNaturaleza==23)
+				{
+					naturaleza="Sassy";
+				}else if (opNaturaleza==24)
+				{
+					naturaleza="Careful";
+				}else if (opNaturaleza==25)
+				{
+					naturaleza="Quirky";
+				}
 				do
 				{
+					cout<<"Es legendario (s/n): ";
 					cin>>temLegendario;
 					if (temLegendario!='s'||temLegendario!='n')
 					{
