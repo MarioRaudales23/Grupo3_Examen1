@@ -475,7 +475,19 @@ int main(int argc, char const *argv[])
 						}
 					}
 					case 4:{
-				
+						int submenu = 0;
+						cout<<"1-Por un tipo\n2-Por dos tipos\n...";
+						cin>>submenu;
+						switch(submenu){
+							case 1:{
+								
+								break;
+							}
+							case 2:{
+
+								break;
+							}
+						}
 						break;
 					}
 					case 5:{
