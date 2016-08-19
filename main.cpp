@@ -24,8 +24,24 @@ int main(int argc, char const *argv[])
 				cout<<"----Datos Generales----"<<endl;
 				cout<<"Nombre: ";
 				cin>>nombre;
-				cout<<"Naturaleza: ";
-				cin>>naturaleza;
+				cout<<"\tNaturaleza: ";
+				int opNaturaleza=0;
+				do
+				{
+					cout<<"1.-Hardy\t2.-Lonely\t3.-Brave\t4.-Adamant"<<endl;
+					cout<<"5.-Naughty\t6.-Bold\t7.-Docile\t8.-Relaxed"<<endl;
+					cout<<"9.-Impish\t10.-Lax\t11.-Timid\t12.-Hasty"<<endl;
+					cout<<"13.-Serious\t14.-Jolly\t15.-Naive\t16.-Modest"<<endl;
+					cout<<"17.-Mild\t18.-Quiet\t19.-Bashful\t20.-Rash"<<endl;
+					cout<<"21.-Calm\t22.-Gentle\t23.-Sassy\t24.-Careful"<<endl;
+					cout<<"25.-Quirky"<<endl<<"...";
+					cin>>opNaturaleza;
+					if (opNaturaleza<0||opNaturaleza>25)
+					{
+						cout<<"Dato ingresado erroneo..."<<endl<<endl;
+					}
+				} while (opNaturaleza<0||opNaturaleza>25);
+				
 				cout<<"Es legendario (s/n): ";
 				do
 				{
