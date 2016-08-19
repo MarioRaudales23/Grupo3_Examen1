@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+using namespace std;
 class pokemon{
 	private:
 		string nom_poke;

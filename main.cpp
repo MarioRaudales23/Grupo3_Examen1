@@ -1,11 +1,12 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "pokemon.h"
+#include <vector>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	std::vector<pokemon> vector_poke;
+	vector<pokemon*> vector_poke;
 	pokemon* poke=new pokemon();
 	int op=0;
 	while(op!=6){

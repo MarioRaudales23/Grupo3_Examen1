@@ -1,6 +1,6 @@
 #include "pokemon.h"
-#include <string>
-
+#include <string.h>
+using namespace std;
 pokemon::pokemon(){
 
 }
@@ -74,7 +74,7 @@ int	pokemon::getdefensa(){
 }
 
 void pokemon::setdefensa(int defensa){
-	nivel_poke = nivel;
+	defensa_poke = defensa;
 }
 int	pokemon::getdefensaesp(){
 	return defesp_poke;
@@ -101,7 +101,7 @@ bool pokemon::getlegendario(){
 	return legend_poke;
 }
 
-void pokemon::setlegendario(int legendario){
+void pokemon::setlegendario(bool legendario){
 	legend_poke = legendario;
 }
 pokemon::~pokemon(){
