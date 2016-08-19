@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 				cout<<"Es legendario (s/n): ";
 				do
 				{
-					cin<<temLegendario;
+					cin>>temLegendario;
 					if (temLegendario!='s'||temLegendario!='n')
 					{
 						cout<<endl<<"Dato ingresado erroneo..."<<endl;
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
 				{
 					cout<<"Tipo : ";
 					cin>>tipo1;
-					tipo2=0;
+					tipo2="0";
 				}else if (numTipo==2)
 				{
 					cout<<"Tipo 1: ";
