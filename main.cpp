@@ -180,7 +180,7 @@ int main(int argc, char const *argv[])
 				pokemon* temp;
 				cout<<"Ingrese la posicion del pokemon: ";
 				cin>>posicion;
-				if (posicion <= vector_poke.size)
+				if (posicion <= vector_poke.size())
 				{
 					temp = vector_poke[posicion];
 					string nombrenue;
@@ -219,7 +219,15 @@ int main(int argc, char const *argv[])
 				}
 				break;
 			}
-			case 5:{
+			case 4:{
+				cout<<"\tOrdenar"<<endl;
+				int opOrdenar=0;
+				cout<<"1.-Ordenar por nombre"<<endl<<"2.-Ordenar por nivel"<<endl<<"...";
+				switch(opOrdenar){
+					case 1:{
+						
+					}
+				}
 
 			}
 
