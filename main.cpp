@@ -181,7 +181,7 @@ int main(int argc, char const *argv[])
 				for (int i = 0; i<vector_poke.size(); ++i)
 				{
 					temp = vector_poke[i];
-					string nombre = temp->getnombre;
+					string nombre = temp->getnombre();
 					int nivel = temp->getnivel();
 					cout<<"Nombre: "<<nombre<<" Nivel: "<<nivel;
 				}
@@ -230,9 +230,45 @@ int main(int argc, char const *argv[])
 				cout<<"\tOrdenar"<<endl;
 				int opOrdenar=0;
 				cout<<"1.-Ordenar por nombre"<<endl<<"2.-Ordenar por nivel"<<endl<<"...";
+				cin>>opOrdenar;
 				switch(opOrdenar){
 					case 1:{
+						vector<pokemon*> vectorTemporal;
+						char abc[]={'a','b','c','d','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+						int sizeAbc=25;
+
+						for (int i = 0; i < sizeAbc; i++)
+						{
+							for (int j = 0; j < vector_poke.size(); j++)
+							{
+								if (vector_poke.at(j)->getnombre()[0]==abc[i]){
+									vectorTemporal.push_back(vector_poke.at(j));
+									cout<<vector_poke.at(j)->getnombre()<<endl;
+								}								
+							}
+						}
+						vector_poke=vectorTemporal;
+						break;
+					}
+					case 2:{
+						vector<pokemon*> vectorTemporal;
 						
+						for (int i = 0; i < vector_poke.size(); i++)
+						{
+							pokemon* tem=vector_poke.at(i);
+							for (int j = 0; j < vector_poke.size(); j++)
+							{
+								if (vector_poke.at(i)->getnivel()<vector_poke.at(j)->getnivel()&&
+									vector_poke.at(i)->getnombre()!=vector_poke.at(j)->getnombre())
+								{
+									tem=vector_poke.at(j);
+								}
+								vectorTemporal.push_back(vector_poke.at(j));
+								cout<<vector_poke.at(j)->getnombre()<<"\t"<<vector_poke.at(j)->getnivel();
+							}
+						}
+						vector_poke=vectorTemporal;
+						break;
 					}
 				}
 
