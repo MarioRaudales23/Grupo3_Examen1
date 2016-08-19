@@ -178,19 +178,26 @@ int main(int argc, char const *argv[])
 			case 2:{
 				int posicion;
 				pokemon* temp;
+				for (int i = 0; i<vector_poke.size(); ++i)
+				{
+					temp = vector_poke[i];
+					string nombre = temp->getnombre;
+					int nivel = temp->getnivel();
+					cout<<"Nombre: "<<nombre<<" Nivel: "<<nivel;
+				}
 				cout<<"Ingrese la posicion del pokemon: ";
 				cin>>posicion;
-				if (posicion <= vector_poke.size)
+				if (posicion <= vector_poke.size())
 				{
 					temp = vector_poke[posicion];
 					string nombrenue;
 					int nivel;
 					int submenu = 0;
-					cout<<"Opcion 1: Nombre\nOpcion 2: Nivel";
+					cout<<"1-Nombre\n2- Nivel\n...";
 					cin>>submenu;
 					switch(submenu){
 						case 1:{
-							cout<<"Ingrese el nombre nuevo";
+							cout<<"Ingrese el nombre nuevo: ";
 							cin>>nombrenue;
 							temp->setnombre(nombrenue);
 							cout<<"Cambio realizado";
@@ -221,6 +228,9 @@ int main(int argc, char const *argv[])
 			}
 			case 5:{
 
+			}
+			case 5:{
+				
 			}
 
 		}
