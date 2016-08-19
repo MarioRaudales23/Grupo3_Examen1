@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "pokemon.h"
 using namespace std;
 
@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 		cin>>op;
 		cout<<endl;
 		switch(op){
-			case 1_{
+			case 1{
 				string nombre,naturaleza,tipo1,tipo2;
 				int nivel,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
 				bool legendario;

@@ -1,6 +1,6 @@
 #include "pokemon.h"
-#include <string>
-
+#include <string.h>
+using namespace std;
 pokemon::pokemon(){
 
 }
