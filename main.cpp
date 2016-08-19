@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
 					cout<<"Tipo : ";
 					cin>>tipo1;
 					tipo2=0;
-				}else if (tipo==2)
+				}else if (numTipo==2)
 				{
 					cout<<"Tipo 1: ";
 					cin>>tipo1;
