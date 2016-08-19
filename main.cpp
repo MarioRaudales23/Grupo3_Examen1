@@ -297,10 +297,80 @@ int main(int argc, char const *argv[])
 								tostring(vector_poke[i]);
 							}
 						}
+						break;
 					}
 					case 2:{
-
+						int valor;
+						int menu = opciones();
+						cout<<"Ingrese el valor de busqueda";
+						cin>>valor;
+						if (valor > 1 && valor < 100)
+						{
+						switch(menu){
+							case 1:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() > valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 2:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() < valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 3:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() == valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 4:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() <= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 5:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() >= valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+							case 6:{
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->getnivel() != valor)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
+								break;
+							}
+						}
+						break;	
 					}
+				}
 					case 3:{
 						int opNaturaleza=0;
 						string naturaleza;
@@ -473,8 +543,6 @@ int main(int argc, char const *argv[])
 								}
 								break;
 							}
-						}
-						break;
 						}
 						break;
 					}
@@ -831,7 +899,7 @@ int main(int argc, char const *argv[])
 		}
 		return 0;
 	}
-
+}
 void tostring(pokemon* poke){
 	string nombre,naturaleza,tipo1,tipo2;
 	int nivel,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
@@ -855,7 +923,6 @@ void tostring(pokemon* poke){
 	}else{
 		leg = 'n';
 	}
-<<<<<<< HEAD
 	cout<<"Nombre: "<<nombre<<"\nNivel: "<<nivel<<"\nNaturaleza: "<<naturaleza<<"\nLegendario: "<<leg<<endl;
 	cout<<"HP: "<<hp<<"\tTipo1: "<<tipo1<<"\tTipo2: "<<tipo2<<endl;
 	cout<<"Ataque: "<<ataque<<"\tDefensa: "<<defensa<<"\tAtaque Especial: "<<ataqueEspecial<<endl;
@@ -867,8 +934,3 @@ int opciones(){
 	cin>>submenu;
 	return submenu;
 }
-=======
-	/* code */
-	return 0;
-}
->>>>>>> cba21fcdc314199b4f4bd92d4cdb73ca67ed7b69
