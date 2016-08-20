@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 		switch(op){
 			case 1:{
 				string nombre,naturaleza,tipo1,tipo2;
-				int nivel,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
+				int nivel=0,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez;
 				bool legendario;
 				int numTipo,sumaStats=0;
 				char temLegendario;
@@ -28,8 +28,11 @@ int main(int argc, char const *argv[])
 				cout<<"----Datos Generales----"<<endl;
 				cout<<"Nombre: ";
 				cin>>nombre;
-				cout<<"Nivel: ";
-				cin>>nivel;
+				do
+				{
+					cout<<"Nivel: ";
+					cin>>nivel;
+				} while (nivel>100);
 				cout<<"\tNaturaleza: ";
 				int opNaturaleza=0;
 				do
