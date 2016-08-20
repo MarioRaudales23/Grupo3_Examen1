@@ -323,70 +323,71 @@ int main(int argc, char const *argv[])
 						if (valor > 1 && valor < 100)
 						{
 						switch(menu){
-							case 1:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() > valor)
-									{
-										tostring(vector_poke[i]);
-									}
+								case 1:{
+									for (int i = 0; i < vector_poke.size(); ++i)
+										{
+											if (vector_poke[i]->getnivel() > valor)
+											{
+												tostring(vector_poke[i]);
+											}
+										}
+										break;
 								}
-								break;
-							}
-							case 2:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() < valor)
+								case 2:{
+									for (int i = 0; i < vector_poke.size(); ++i)
 									{
-										tostring(vector_poke[i]);
+										if (vector_poke[i]->getnivel() < valor)
+										{
+											tostring(vector_poke[i]);
+										}
 									}
+									break;
 								}
-								break;
-							}
-							case 3:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() == valor)
+								case 3:{
+									for (int i = 0; i < vector_poke.size(); ++i)
 									{
-										tostring(vector_poke[i]);
+										if (vector_poke[i]->getnivel() == valor)
+										{
+											tostring(vector_poke[i]);
+											}
+										}
+										break;
 									}
-								}
-								break;
-							}
-							case 4:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() <= valor)
+								case 4:{
+									for (int i = 0; i < vector_poke.size(); ++i)
 									{
-										tostring(vector_poke[i]);
+										if (vector_poke[i]->getnivel() <= valor)
+										{
+											tostring(vector_poke[i]);
+										}
 									}
+									break;
 								}
-								break;
-							}
-							case 5:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() >= valor)
+								case 5:{
+									for (int i = 0; i < vector_poke.size(); ++i)
 									{
-										tostring(vector_poke[i]);
+										if (vector_poke[i]->getnivel() >= valor)
+										{
+											tostring(vector_poke[i]);
+										}
 									}
+									break;
 								}
-								break;
-							}
-							case 6:{
-								for (int i = 0; i < vector_poke.size(); ++i)
-								{
-									if (vector_poke[i]->getnivel() != valor)
+								case 6:{
+									for (int i = 0; i < vector_poke.size(); ++i)
 									{
-										tostring(vector_poke[i]);
+										if (vector_poke[i]->getnivel() != valor)
+										{
+											tostring(vector_poke[i]);
+										}
 									}
+									break;
 								}
-								break;
 							}
+								
 						}
-						break;	
+						break;
 					}
-				}
 					case 3:{
 						int opNaturaleza=0;
 						string naturaleza;
@@ -488,6 +489,7 @@ int main(int argc, char const *argv[])
 								tostring(vector_poke[i]);
 							}
 						}
+						break;
 					}
 					case 4:{
 						int submenu = 0;
@@ -495,11 +497,23 @@ int main(int argc, char const *argv[])
 						cin>>submenu;
 						switch(submenu){
 							case 1:{
-								
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if (vector_poke[i]->gettipo1() == tipo1 ||vector_poke[i]->gettipo2() == tipo1)
+									{
+										tostring(vector_poke[i]);
+									}
+								}
 								break;
 							}
 							case 2:{
-
+								for (int i = 0; i < vector_poke.size(); ++i)
+								{
+									if ((vector_poke[i]->gettipo1() == tipo1 && vector_poke[i]->gettipo2() == tipo2) ||(vector_poke[i]->gettipo1() == tipo2 && vector_poke[i]->gettipo2() == tipo1) )
+									{
+										tostring(vector_poke[i]);
+									}
+								}
 								break;
 							}
 						}
@@ -933,6 +947,7 @@ int main(int argc, char const *argv[])
 			}
 		}
 	}
+	delete poke;
 	return 0;
 }
 void tostring(pokemon* poke){
@@ -950,7 +965,7 @@ void tostring(pokemon* poke){
 	defensa= poke->getdefensa();
 	ataqueEspecial= poke->getataquesp();
 	defensaEspecial= poke->getdefensaesp();
-	rapidez= poke->getrapidez();
+	rapidez = poke->getrapidez();
 	legendario= poke->getlegendario();
 	if (legendario)
 	{
