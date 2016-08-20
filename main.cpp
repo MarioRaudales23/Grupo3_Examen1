@@ -978,6 +978,10 @@ int main(int argc, char const *argv[])
 		}
 	}
 	delete poke;
+	for (int i = 0; i < vector_poke.size(); i++)
+	{
+		delete vector_poke.at(i);
+	}
 	return 0;
 }
 void tostring(pokemon* poke){
