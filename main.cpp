@@ -494,7 +494,19 @@ int main(int argc, char const *argv[])
 						cout<<"1-Por un tipo\n2-Por dos tipos\n...";
 						cin>>submenu;
 						switch(submenu){
+							
 							case 1:{
+								int opTipos;
+								string tipo1,tipo2;
+							cout<<"1.-Bug\t2.-Dragon\t3.-Ice\t4.-Fighting"<<endl;
+							cout<<"5.-Fire\t6.-Flying\t7.-Grass\t8.-Ghost"<<endl;
+							cout<<"9.-Ground\t10.-Electric\t11.-Normal\t12.-Poison"<<endl;
+							cout<<"13.-Phychic\t14.-Rock\t15.-Water\t16.-Dark"<<endl;
+							cout<<"17.-Steel\t18.-Fairy\t19.-Bird\t20.-Shadow"<<endl;
+							cout<<"..."<<endl;
+								cout<<"Tipo 1: ";
+								cin>>opTipos;
+								tipo1=tipos(opTipos);
 								for (int i = 0; i < vector_poke.size(); ++i)
 								{
 									if (vector_poke[i]->gettipo1() == tipo1 ||vector_poke[i]->gettipo2() == tipo1)
@@ -505,6 +517,21 @@ int main(int argc, char const *argv[])
 								break;
 							}
 							case 2:{
+							int opTipos=0;
+							string tipo1,tipo2;
+							cout<<"1.-Bug\t2.-Dragon\t3.-Ice\t4.-Fighting"<<endl;
+							cout<<"5.-Fire\t6.-Flying\t7.-Grass\t8.-Ghost"<<endl;
+							cout<<"9.-Ground\t10.-Electric\t11.-Normal\t12.-Poison"<<endl;
+							cout<<"13.-Phychic\t14.-Rock\t15.-Water\t16.-Dark"<<endl;
+							cout<<"17.-Steel\t18.-Fairy\t19.-Bird\t20.-Shadow"<<endl;
+							cout<<"..."<<endl;
+							cout<<"Tipo 1: ";
+							cin>>opTipos;
+							tipo1=tipos(opTipos);
+							int opTipos2;
+							cout<<"Tipo 2: ";
+							cin>>opTipos2;
+							tipo2=tipos(opTipos);
 								for (int i = 0; i < vector_poke.size(); ++i)
 								{
 									if ((vector_poke[i]->gettipo1() == tipo1 && vector_poke[i]->gettipo2() == tipo2) ||(vector_poke[i]->gettipo1() == tipo2 && vector_poke[i]->gettipo2() == tipo1) )
