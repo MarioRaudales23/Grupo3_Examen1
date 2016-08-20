@@ -186,7 +186,7 @@ int main(int argc, char const *argv[])
 					cout<<"Defensa Especial: ";
 					cin>>defensaEspecial;
 					cout<<"Velocidad: ";
-					cin>>Velocidad;
+					cin>>velocidad;
 					sumaStats+=defensaEspecial;
 				} while (sumaStats>780);
 				poke=new pokemon(nombre,nivel,naturaleza,tipo1,tipo2,hp,ataque,defensa,ataqueEspecial,defensaEspecial,rapidez,legendario);
