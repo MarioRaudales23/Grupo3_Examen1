@@ -6,7 +6,7 @@ using namespace std;
 
 void tostring(pokemon*);
 int opciones();
-
+string tipos(int);
 int main(int argc, char const *argv[])
 {
 	vector<pokemon*> vector_poke;
@@ -143,18 +143,31 @@ int main(int argc, char const *argv[])
 						cout<<endl<<"-------------------------"<<endl<<"Error la cantidad de tipos no puede ser mayor que 2"<<endl<<"-------------------------"<<endl;
 					}
 				} while (numTipo<1||numTipo>2);
-				if (numTipo==1)
-				{
-					cout<<"Tipo : ";
-					cin>>tipo1;
-					tipo2="0";
-				}else if (numTipo==2)
+				cout<<"\tTipos"<<endl;
+				int opTipos=0;
+				cout<<"1.-Bug\t2.-Dragon\t3.-Ice\t4.-Fighting"<<endl;
+				cout<<"5.-Fire\t6.-Flying\t7.-Grass\t8.-Ghost"<<endl;
+				cout<<"9.-Ground\t10.-Electric\t11.-Normal\t12.-Poison"<<endl;
+				cout<<"13.-Phychic\t14.-Rock\t15.-Water\t16.-Dark"<<endl;
+				cout<<"17.-Steel\t18.-Fairy\t19.-Bird\t20.-Shadow"<<endl;
+				cout<<"..."<<endl;
+				if (numTipo==2)
 				{
 					cout<<"Tipo 1: ";
-					cin>>tipo1;
+					cin>>opTipos;
+					tipo1=tipos(opTipos);
+					int opTipos2;
 					cout<<"Tipo 2: ";
-					cin>>tipo2;
+					cin>>opTipos2;
+					tipo2=tipos(opTipos);
+				}else if (numTipo==1)
+				{
+					cout<<"Tipo 1: ";
+					cin>>opTipos;
+					tipo1=tipos(opTipos);
 				}
+				
+				
 				cout<<"----Status----"<<endl;
 				do
 				{
@@ -968,4 +981,68 @@ int opciones(){
 	cout<<"1-Mayor a\n2-Menor a\n3-Igual a\n4-Menor o igual\n5-Mayor o igual\n6-Diferente de\n...";
 	cin>>submenu;
 	return submenu;
+}
+string tipos(int op){
+
+	if (op==1)
+	{
+		return "Bug";
+	}else if (op==2)
+	{
+		return "Dragon";
+	}else if (op==3)
+	{
+		return "Ice";
+	}else if (op==4)
+	{
+		return "Fighting";
+	}else if (op==5)
+	{
+		return "Fire";
+	}else if (op==6)
+	{
+		return "Flying";
+	}else if (op==7)
+	{
+		return "Grass";
+	}else if (op==8)
+	{
+		return "Ghost";
+	}else if (op==9)
+	{
+		return "Ground";
+	}else if (op==10)
+	{
+		return "Electric";
+	}else if (op==11)
+	{
+		return "Normal";
+	}else if (op==12)
+	{
+		return "Poison";
+	}else if (op==13)
+	{
+		return "Phychic";
+	}else if (op==14)
+	{
+		return "Rock";
+	}else if (op==15)
+	{
+		return "Water";
+	}else if (op==16)
+	{
+		return "Dark";
+	}else if (op==17)
+	{
+		return "Steel";
+	}else if (op==18)
+	{
+		return "Fairy";
+	}else if (op==19)
+	{
+		return "Bird";
+	}else if (op==20)
+	{
+		return "Shadow";
+	}
 }
